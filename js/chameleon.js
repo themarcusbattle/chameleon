@@ -1,3 +1,7 @@
+window.onscroll = function() {
+    console.log('scrolling');
+};
+
 let chameleonMoveSlideLeft = ( event ) => {
 
     const slides = document.querySelectorAll('.slide')
