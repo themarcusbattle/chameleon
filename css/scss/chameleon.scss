@@ -259,6 +259,18 @@ ul.menu {
     height: 100%;
     top: 0;
     z-index: 10;
+
+
+    &.menu-overlay {
+        overflow: hidden;
+        overflow-y: scroll;
+        position: fixed;
+        z-index: 1000;
+    }
+}
+
+.has-no-scroll {
+    overflow: hidden;
 }
 
 .container {
@@ -276,7 +288,8 @@ ul.menu {
 
     .col {
         flex: 1;
-        margin: 0 1%; }
+        margin: 0 1%; 
+    }
 
     &.grid-gallery {
         flex-wrap: wrap;
@@ -304,6 +317,10 @@ ul.menu {
     &.has-no-margin {
         .col {
             margin: 0; }
+    }
+
+    @media (max-width: 500px) {
+        flex-direction: column;
     }
 }
 
