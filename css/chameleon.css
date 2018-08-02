@@ -207,6 +207,25 @@ ul.menu {
 .slider {
   padding: 0; }
 
+.menu-overlay {
+  overflow: hidden;
+  overflow-y: scroll;
+  padding: 4em 2em;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  transition-property: display;
+  transition-duration: 2000ms; }
+  .menu-overlay > div:first-of-type {
+    z-index: 100; }
+  .menu-overlay .overlay {
+    opacity: .99; }
+  .menu-overlay nav {
+    margin-top: 2em; }
+  .menu-overlay.closed {
+    display: none; }
+
 .overlay {
   opacity: .6;
   background-color: #000;
@@ -216,11 +235,6 @@ ul.menu {
   height: 100%;
   top: 0;
   z-index: 10; }
-  .overlay.menu-overlay {
-    overflow: hidden;
-    overflow-y: scroll;
-    position: fixed;
-    z-index: 1000; }
 
 .has-no-scroll {
   overflow: hidden; }
@@ -339,6 +353,9 @@ hr {
 .is-centered {
   margin: 0 auto; }
 
+.is-absolute {
+  position: absolute; }
+
 .is-full {
   width: 100%;
   max-width: inherit; }
@@ -363,6 +380,12 @@ hr {
 
 .has-top-border {
   border-top: 2px solid #dddddd; }
+
+.is-close-button {
+  z-index: 100;
+  right: 1em;
+  top: 1em;
+  font-size: 1.5em; }
 
 i.is-large {
   font-size: 2em; }
