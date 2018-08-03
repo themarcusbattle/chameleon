@@ -217,6 +217,11 @@ ul.menu {
         position: absolute;
         z-index: 0;
         width: 100%;
+
+        @media ( max-width: 500px ) {
+            height: 100%;
+            width: inherit;
+        }
     }
 
     .slider-button-left,

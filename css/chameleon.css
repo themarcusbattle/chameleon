@@ -173,6 +173,11 @@ ul.menu {
     position: absolute;
     z-index: 0;
     width: 100%; }
+    @media (max-width: 500px) {
+      .hero video,
+      .slider video {
+        height: 100%;
+        width: inherit; } }
   .hero .slider-button-left,
   .hero .slider-button-right,
   .slider .slider-button-left,
