@@ -162,14 +162,13 @@ ul.menu {
         padding: .25em 0;
     }
 
-    li {
-        
-    }
+    li { }
 
     &.horizontal {
         
         li {
             display: inline-block;
+            margin: 0 3%;
         }
     }
 }
