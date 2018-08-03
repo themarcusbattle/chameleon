@@ -214,13 +214,16 @@ ul.menu {
     }
 
     video {
-        position: absolute;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%; 
+        min-height: 100%;
         z-index: 0;
-        width: 100%;
 
         @media ( max-width: 500px ) {
-            height: 100%;
-            width: inherit;
+            // height: 100%;
+            // width: inherit;
         }
     }
 
