@@ -170,12 +170,16 @@ ul.menu {
         width: 100%; } }
   .hero video,
   .slider video {
-    position: fixed;
-    right: 0;
+    position: absolute;
+    left: 0;
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
     z-index: 0; }
+    @media (max-width: 500px) {
+      .hero video,
+      .slider video {
+        left: -100%; } }
   .hero .slider-button-left,
   .hero .slider-button-right,
   .slider .slider-button-left,
