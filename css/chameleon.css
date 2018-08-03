@@ -236,7 +236,8 @@ ul.menu {
   .menu-overlay > div:first-of-type {
     z-index: 100; }
   .menu-overlay .overlay {
-    opacity: .99; }
+    opacity: .99;
+    position: fixed; }
   .menu-overlay nav {
     margin-top: 2em; }
   .menu-overlay.closed {
