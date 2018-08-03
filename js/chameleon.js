@@ -20,8 +20,8 @@ document.addEventListener( 'DOMContentLoaded', () => {
         event.preventDefault();
 
         menuOverlay.classList.add('is-hidden')
-        document.querySelector( 'html' ).classList.add( 'has-no-scroll' )
-        document.querySelector( 'body' ).classList.add( 'has-no-scroll' )
+        document.querySelector( 'html' ).classList.remove( 'has-no-scroll' )
+        document.querySelector( 'body' ).classList.remove( 'has-no-scroll' )
     })
 });
 
