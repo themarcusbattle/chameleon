@@ -1,12 +1,24 @@
 document.addEventListener( 'DOMContentLoaded', () => {
     
+    let revealMenu  = document.querySelector( '.reveal-menu' );
     let closeMenu   = document.querySelector( '#close-menu' );
     let menuOverlay = document.querySelector( '.menu-overlay' );
+
+    if ( undefined === closeMenu ) {
+        return;
+    }
+
+    revealMenu.addEventListener( 'click', ( event ) => {
+        event.preventDefault();
+
+        menuOverlay.classList.remove('is-hidden')
+        document.querySelector( 'body' ).classList.add( 'has-no-scroll' )
+    })
 
     closeMenu.addEventListener( 'click', ( event ) => {
         event.preventDefault();
 
-        menuOverlay.classList.add('closed')
+        menuOverlay.classList.add('is-hidden')
         document.querySelector( 'body' ).classList.remove( 'has-no-scroll' )
     })
 });
