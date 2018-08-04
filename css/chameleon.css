@@ -70,7 +70,8 @@ span {
   outline: 0;
   padding: 16px 28px;
   text-transform: uppercase;
-  margin-right: .5em; }
+  margin-right: .5em;
+  margin-bottom: 1em; }
   .btn.btn-sm {
     font-size: .8em;
     padding: .75em 2em; }
@@ -264,7 +265,9 @@ ul.menu {
   z-index: 20; }
   @media (max-width: 500px) {
     .container {
-      width: 100%; } }
+      width: 100%; }
+      .container.is-three-fourths {
+        width: 100%; } }
 
 .grid {
   display: flex;
@@ -273,6 +276,9 @@ ul.menu {
   .grid .col {
     flex: 1;
     margin: 0 1%; }
+    @media (max-width: 500px) {
+      .grid .col.has-margin-bottom-on-mobile {
+        margin-bottom: 1.5em; } }
   .grid.grid-gallery {
     flex-wrap: wrap;
     flex-flow: row wrap; }
@@ -322,9 +328,15 @@ hr {
 
 .has-text-align-right {
   text-align: right; }
+  @media (max-width: 500px) {
+    .has-text-align-right.has-text-align-left-on-mobile {
+      text-align: left; } }
 
 .has-text-align-center {
   text-align: center; }
+  @media (max-width: 500px) {
+    .has-text-align-center.has-text-align-left-on-mobile {
+      text-align: left; } }
 
 .left-align {
   text-align: left; }
@@ -365,6 +377,9 @@ hr {
 
 .has-margin-bottom {
   margin-bottom: 1.5em; }
+  @media (max-width: 500px) {
+    .has-margin-bottom-on-mobile {
+      margin-bottom: 1.5em; } }
 
 .is-fixed {
   position: fixed;
@@ -383,6 +398,9 @@ hr {
 
 .is-half {
   width: 50%; }
+  @media (max-width: 500px) {
+    .is-half {
+      width: 100%; } }
 
 .is-three-fourths {
   width: 75%; }
