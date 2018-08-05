@@ -80,6 +80,10 @@ span {
     margin-right: .5em;
     margin-bottom: 1em;
 
+    i {
+        font-size: inherit;
+    }
+
     &.btn-sm {
         font-size: .8em;
         padding: .75em 2em; }
@@ -114,6 +118,21 @@ span {
 
     i {
         margin-left: .5em; }
+
+    .show-on-hover {
+        margin-left: -20px;
+        opacity: 0;
+        transition-property: opacity, margin-left;
+        transition-duration: 200ms;
+    }
+
+    &:hover {
+
+        .show-on-hover {
+            opacity: 1;
+            margin-left: .5em;
+        }
+    }
 }
 
 // Forms
@@ -461,11 +480,29 @@ hr {
     }
 }
 
+*[class*="has-width-"] {
+    @media( max-width: 500px ) {
+        &.is-full-on-mobile {
+            width: 100%;
+        }
+    }
+}
+
 .is-fixed { position: fixed; width: 100%; z-index: 100; }
 .is-centered { margin: 0 auto; }
 .is-absolute { position: absolute; }
 
-.is-full { width: 100%; max-width: inherit; }
+.is-full { 
+    width: 100%;
+    max-width: inherit;
+
+    @media( max-width: 500px ) {
+        &-on-mobile {
+            width: 100%;
+        }
+    }
+}
+
 .is-half { 
     width: 50%; 
 
@@ -548,7 +585,6 @@ iframe {
 // Fontawesome
 .fa, .fab, .fal, .far, .fas, i {
     color: inherit;
-    font-size: 1.25em;
 }
 
 // Shapes

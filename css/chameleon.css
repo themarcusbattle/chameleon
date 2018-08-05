@@ -72,6 +72,8 @@ span {
   text-transform: uppercase;
   margin-right: .5em;
   margin-bottom: 1em; }
+  .btn i {
+    font-size: inherit; }
   .btn.btn-sm {
     font-size: .8em;
     padding: .75em 2em; }
@@ -91,6 +93,14 @@ span {
   .btn:hover {
     background-color: #262626; }
   .btn i {
+    margin-left: .5em; }
+  .btn .show-on-hover {
+    margin-left: -20px;
+    opacity: 0;
+    transition-property: opacity, margin-left;
+    transition-duration: 200ms; }
+  .btn:hover .show-on-hover {
+    opacity: 1;
     margin-left: .5em; }
 
 input {
@@ -381,6 +391,10 @@ hr {
     .has-margin-bottom-on-mobile {
       margin-bottom: 1.5em; } }
 
+@media (max-width: 500px) {
+  *[class*="has-width-"].is-full-on-mobile {
+    width: 100%; } }
+
 .is-fixed {
   position: fixed;
   width: 100%;
@@ -395,6 +409,9 @@ hr {
 .is-full {
   width: 100%;
   max-width: inherit; }
+  @media (max-width: 500px) {
+    .is-full-on-mobile {
+      width: 100%; } }
 
 .is-half {
   width: 50%; }
@@ -481,8 +498,7 @@ iframe {
   width: 100%; }
 
 .fa, .fab, .fal, .far, .fas, i {
-  color: inherit;
-  font-size: 1.25em; }
+  color: inherit; }
 
 .is-shape-flag:after {
   display: none;
