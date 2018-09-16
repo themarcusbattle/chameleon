@@ -359,6 +359,10 @@ ul.menu {
         flex: 1;
         margin: 0 1%;
 
+        &.has-width-25 { width: 25%; flex: inherit; }
+        &.has-width-50 { width: 50%; flex: inherit; }
+        &.has-width-75 { width: 75%; flex: inherit; }
+
         @media( max-width: 500px ) {
             &.has-margin-bottom-on-mobile {
                 margin-bottom: 1.5em;
@@ -382,9 +386,6 @@ ul.menu {
     &.grid-content {
         margin: 0 auto;
     }
-
-    .col-half {
-        flex: 2 0 0; }
 
     &.vertical-align { 
         align-items: center; }

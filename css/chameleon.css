@@ -142,7 +142,7 @@ ul.menu {
     padding: .25em 0; }
   ul.menu.horizontal li {
     display: inline-block;
-    margin: 0 3%; }
+    margin: 0 1.5%; }
 
 .hero,
 .slider {
@@ -286,6 +286,15 @@ ul.menu {
   .grid .col {
     flex: 1;
     margin: 0 1%; }
+    .grid .col.has-width-25 {
+      width: 25%;
+      flex: inherit; }
+    .grid .col.has-width-50 {
+      width: 50%;
+      flex: inherit; }
+    .grid .col.has-width-75 {
+      width: 75%;
+      flex: inherit; }
     @media (max-width: 500px) {
       .grid .col.has-margin-bottom-on-mobile {
         margin-bottom: 1.5em; } }
@@ -300,8 +309,6 @@ ul.menu {
       margin-bottom: 1.5em; }
   .grid.grid-content {
     margin: 0 auto; }
-  .grid .col-half {
-    flex: 2 0 0; }
   .grid.vertical-align {
     align-items: center; }
   .grid.has-no-margin .col {
