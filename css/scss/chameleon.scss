@@ -217,7 +217,7 @@ ul.menu {
         margin-bottom: .5em; 
 
         @media ( max-width: 500px ) {
-            font-size: 3.5em;
+            font-size: 3em;
         }
     }
 
@@ -380,6 +380,10 @@ ul.menu {
             background-color: #dddddd;
             flex: none;
             margin-bottom: 1.5em;
+
+            @media( max-width: 500px ) {
+                width: 100%;
+            }
         }
     }
 
@@ -468,6 +472,12 @@ hr {
 .has-padding-lg { padding: 4em 2em; }
 .has-padding-xl { padding: 4em; }
 .has-padded-height { padding-top: 5%; padding-bottom: 5%; }
+
+.has-no-padding-on-mobile {
+    @media( max-width: 500px ) {
+        padding: 0;
+    }
+}
 
 .has-no-margin { margin: 0; }
 .has-margin { margin: 1em; }
