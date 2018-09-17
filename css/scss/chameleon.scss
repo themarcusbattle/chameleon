@@ -490,7 +490,7 @@ hr {
 }
 
 .is-fixed { position: fixed; width: 100%; z-index: 100; }
-.is-absolute { position: absolute; width: 100%; }
+.is-absolute { position: absolute; width: 100%; z-index: 100; }
 .is-centered { margin: 0 auto; }
 .is-absolute { position: absolute; }
 
@@ -538,6 +538,7 @@ hr {
     right: 1em;
     top: 1em;
     font-size: 1.5em;
+    width: initial;
 }
 
 // Sizes
