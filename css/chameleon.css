@@ -303,8 +303,6 @@ ul.menu {
     flex-flow: row wrap; }
     .grid.grid-gallery .col {
       width: 48%;
-      height: 300px;
-      background-color: #dddddd;
       flex: none;
       margin-bottom: 1.5em; }
       @media (max-width: 500px) {
