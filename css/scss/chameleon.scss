@@ -500,7 +500,15 @@ hr {
 }
 
 .is-fixed { position: fixed; width: 100%; z-index: 100; }
-.is-absolute { position: absolute; width: 100%; z-index: 100; }
+.is-absolute {
+    position: absolute; width: 100%; z-index: 100; 
+
+    @media( max-width: 500px ) {
+        &.not-absolute-on-mobile {
+            position: relative;
+        }
+    }
+}
 .is-centered { margin: 0 auto; }
 .is-absolute { position: absolute; }
 
@@ -583,12 +591,7 @@ i.is-xl {
     img { max-width: 100%; }
 }
 
-img {
-
-    &.sticker {
-        position: absolute;
-    }
-}
+img { }
 
 iframe {
     border: none;
