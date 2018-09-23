@@ -126,6 +126,9 @@ div {
 
 header {
   padding: 1em; }
+  header.is-fixed, header.is-absolute {
+    width: 100%;
+    z-index: 100; }
 
 section,
 footer {
@@ -413,9 +416,7 @@ hr {
   z-index: 100; }
 
 .is-absolute {
-  position: absolute;
-  width: 100%;
-  z-index: 100; }
+  position: absolute; }
   @media (max-width: 500px) {
     .is-absolute.not-absolute-on-mobile {
       position: relative; } }
