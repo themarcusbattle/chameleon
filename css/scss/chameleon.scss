@@ -15,14 +15,14 @@ html, body{
 body {
     font-size: 1em; // 1em = 12pt = 16px = 100%
     font-size: 100%;
-    font-family: sans-serif;
+    font-family: 'Nunito', sans-serif;
     letter-spacing: 0.01em;
 }
 
 // Typography
-h1 { font-size: 4em; margin-bottom: .75em; }
+h1 { font-size: 4em; margin-bottom: .75em; font-weight: normal; }
 h2 { font-size: 2.5em; margin-bottom: .75em; }
-h3 { margin-bottom: 1em; }
+h3 { margin-bottom: 1em; font-weight: bold; }
 h4 { margin-bottom: .75em; }
 h5 { margin-bottom: .75em; }
 h6 { margin-bottom: .25em; }
@@ -31,6 +31,7 @@ a {
     color: $primary;
     cursor: pointer;
     outline: none;
+    text-decoration: none;
 }
 
 blockquote {
@@ -68,23 +69,31 @@ span {
     display: inline-block; }
 
 // Buttons
-.btn {
+.button-group {
+    display: block;
+    margin: 2em;
+}
+
+.btn,
+.button {
     background-color: $primary;
     border: none;
     color: #fff;
     cursor: pointer;
     display: inline-block;
     outline: 0;
-    padding: 16px 28px;
-    text-transform: uppercase;
+    padding: .75em 2em;
     margin-right: .5em;
     margin-bottom: 1em;
+    text-decoration: none;
+    border-radius: 3px;
 
     i {
         font-size: inherit;
     }
 
-    &.btn-sm {
+    &.btn-sm,
+    &.sz-small {
         font-size: .8em;
         padding: .75em 2em; }
 
@@ -97,11 +106,12 @@ span {
         font-size: 1.5em;
     }
 
-    &.btn-outlined {
+    &.btn-outlined,
+    &.button-outlined {
         background-color: transparent;
         border: 1px solid #000000;
         color: inherit;
-        padding: 14px 1.75em;
+        padding: 11px 2em;
 
         &:hover {
             color: #ffffff;
@@ -114,16 +124,20 @@ span {
 
     &:hover {
         background-color: darken( $primary, 25% );
+        transition-property: background-color;
+        transition-duration: 500ms;
     }
 
     i {
-        margin-left: .5em; }
+        position: relative;
+        margin-left: 0.5em;
+        top: .1em; }
 
     .show-on-hover {
         margin-left: -20px;
         opacity: 0;
         transition-property: opacity, margin-left;
-        transition-duration: 200ms;
+        transition-duration: 500ms;
     }
 
     &:hover {
@@ -177,6 +191,19 @@ footer {
 
 nav {
     .menu a { padding: 0 1%; }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            display: inline-block;
+
+            a {
+                padding: .75em;
+            }
+        }
+    }
 }
 
 ul.menu {
@@ -219,15 +246,20 @@ ul.menu {
     }
 
     h1 {
-        font-size: 5em; 
-        margin-bottom: .5em; 
+        font-size: 4em;
+        line-height: 1em;
+        margin-bottom: .25em; 
+        display: block;
 
         @media ( max-width: 500px ) {
             font-size: 3em;
         }
     }
 
-    p { font-size: 1.25em; }
+    p.subtitle { 
+        font-size: 1.25em; 
+        max-width: 550px;
+        margin: 0 auto 3em; }
 
     .hero-panel {
         width: 70%;
@@ -341,9 +373,8 @@ ul.menu {
 }
 
 .container {
-    width: 90%;
     margin: auto;
-    max-width: 1290px;
+    max-width: 1130px;
     position: relative;
     z-index: 20;
 
@@ -363,10 +394,11 @@ ul.menu {
 
     .col {
         flex: 1;
-        margin: 0 1%;
+        margin: 1%;
 
         &.has-width-25 { width: 25%; flex: inherit; }
-        &.has-width-50 { width: 50%; flex: inherit; }
+        &.one-third { flex: 30%; }
+        &.has-width-50, &.one-half { flex: 48%; }
         &.has-width-75 { width: 75%; flex: inherit; }
 
         @media( max-width: 500px ) {
@@ -381,15 +413,26 @@ ul.menu {
         flex-flow: row wrap;
 
         .col {
-            width: 48%;
             // height: 300px;
             // background-color: #dddddd;
-            flex: none;
+            // flex: none;
             margin-bottom: 1.5em;
 
             @media( max-width: 500px ) {
                 width: 100%;
             }
+        }
+    }
+
+    &.product-grid {
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+
+        .col {
+            height: 300px;
+            text-align: center;
+            align-items: center;
+            background-color: #f4f4f4;
         }
     }
 
@@ -442,6 +485,9 @@ hr {
     }
 }
 
+.cta {
+    text-align: center;
+}
 
 // Styles
 .has-border {
@@ -449,7 +495,8 @@ hr {
 
 // Formatting
 .has-text-align-left { text-align: left; }
-.has-text-align-right { 
+.has-text-align-right,
+.has-text-right { 
     text-align: right;
 
     @media( max-width: 500px ) {
@@ -458,7 +505,8 @@ hr {
         }
     }
 }
-.has-text-align-center { 
+.has-text-align-center,
+.has-text-centered { 
     text-align: center; 
 
     @media( max-width: 500px ) {
@@ -564,6 +612,10 @@ hr {
     width: initial;
 }
 
+.fineprint {
+    font-size: .75em;
+}
+
 // Sizes
 i.is-large { 
     font-size: 2em; }
@@ -608,6 +660,15 @@ iframe {
     color: inherit;
 }
 
+.icon {
+    margin-bottom: .5em;
+    display: block;
+
+    &.icon-large {
+        font-size: 3em;
+    }
+}
+
 // Shapes
 .is-shape-flag {
 
@@ -622,5 +683,67 @@ iframe {
         z-index: -1;
         transform-origin: 0 0;
         transform: rotate(-30deg) skewX(30deg);
+    }
+}
+
+
+
+
+
+
+.branding {
+    max-width: 200px;
+
+    .logo {
+        display: block;
+        font-size: 1.5em; }
+
+    .tagline {
+        display: block;
+    }
+}
+
+.media {
+    display: block;
+
+    &.thumbnail {
+        background-color: #f4f4f4;
+        min-height: 250px; }
+}
+
+.recent-posts {
+
+    h2.headline { text-align: center; }
+
+    .post-preview {
+
+        .thumbnail {
+            margin-bottom: 1.5em;
+        }
+    }
+    .post-preview-meta {
+        padding: 1em 2em;
+    }
+
+    .post-date {
+        display: block;
+        margin-bottom: 1em;
+    }
+}
+
+.content {
+    max-width: 1150px;
+    min-height: 250px;
+    margin: 0 auto;
+
+    .post-title {
+        font-size: 3em;
+        margin-bottom: .25em; }
+
+    .post-meta {
+        padding: 1em 0 2em;
+
+        .post-date {
+            }
     }
 }
