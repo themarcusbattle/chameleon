@@ -625,7 +625,8 @@ hr {
 
 @media (max-width: 500px) {
   *[class*=has-width-].is-full-on-mobile,
-.grid .col.one-half.is-full-on-mobile {
+.grid .col.one-half.is-full-on-mobile,
+.grid .col.one-third.is-full-on-mobile {
     width: 100%;
     flex: 100%;
   }

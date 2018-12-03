@@ -557,7 +557,8 @@ hr {
 }
 
 *[class*="has-width-"],
-.grid .col.one-half {
+.grid .col.one-half,
+.grid .col.one-third {
     @media( max-width: 500px ) {
         &.is-full-on-mobile {
             width: 100%;
