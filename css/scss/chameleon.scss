@@ -21,7 +21,7 @@ body {
 
 // Typography
 h1 { font-size: 4em; margin-bottom: .75em; font-weight: normal; }
-h2 { font-size: 2.5em; margin-bottom: .75em; }
+h2 { font-size: 2.5em; margin-bottom: .75em; letter-spacing: .1em; }
 h3 { margin-bottom: 1em; font-weight: bold; }
 h4 { margin-bottom: .75em; }
 h5 { margin-bottom: .75em; }
@@ -75,7 +75,9 @@ span {
 }
 
 .btn,
-.button {
+.button,
+input[type="submit"],
+.comment-reply-link {
     background-color: $primary;
     border: none;
     color: #fff;
@@ -150,19 +152,21 @@ span {
 }
 
 // Forms
-input {
+input,
+textarea {
     display: block;
     font-size: inherit;
     outline: none;
     padding: .5em;
     margin-bottom: .5em;
     width: 100%;
+    border: .25px solid #CCC;
 }
 
 label {
     font-size: .917em;
     font-weight: bold;
-    margin-left: .5em;
+    display: block;
 }
 
 
@@ -183,6 +187,12 @@ header {
     &.is-absolute {
         width: 100%; z-index: 100;
     }
+
+    @media( max-width: 500px ) {
+        background-color: $primary;
+        a { color: #fff; }
+
+    }
 }
 
 section,
@@ -195,6 +205,7 @@ nav {
     ul {
         list-style: none;
         padding-left: 0;
+        margin-bottom: 0;
 
         li {
             display: inline-block;
@@ -545,10 +556,12 @@ hr {
     }
 }
 
-*[class*="has-width-"] {
+*[class*="has-width-"],
+.grid .col.one-half {
     @media( max-width: 500px ) {
         &.is-full-on-mobile {
             width: 100%;
+            flex: 100%;
         }
     }
 }
@@ -736,8 +749,16 @@ iframe {
     min-height: 250px;
     margin: 0 auto;
 
+    .post {
+        display: block;
+        margin: 1% 1% 4em;
+    
+        .post-content {
+            display: block; }
+    }
+
     .post-title {
-        font-size: 3em;
+        font-size: 2.5em;
         margin-bottom: .25em; }
 
     .post-meta {
@@ -745,5 +766,49 @@ iframe {
 
         .post-date {
             }
+    }
+    
+    .comments {
+
+    }
+
+    p {
+        margin-bottom: 2em;
+    }
+}
+
+#comments {
+
+    .comment-body,
+    #respond {
+        border-top: 1px solid #eeeeee;
+        padding-top: 1.5em;
+        padding-bottom: 1em;
+    }
+
+    .comment-list {
+        list-style: none;
+        padding-left: 0;
+
+        .children {
+            list-style: none;
+            padding-left: 3em;
+        }
+    }
+
+    .comment-reply-link {
+        font-size: .8em;
+        padding: .75em 2em;
+    }
+}
+
+#breadcrumb {
+    background-color: #f4f4f4;
+
+    .crumbs {
+
+        li:last-child {
+            padding: 0.75em;
+        }
     }
 }
