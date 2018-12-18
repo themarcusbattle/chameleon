@@ -88,7 +88,9 @@ ul li, ol li {
 }
 
 .btn,
-.button {
+.button,
+input[type=submit],
+.comment-reply-link {
   background-color: #666666;
   border: none;
   color: #fff;
@@ -102,25 +104,39 @@ ul li, ol li {
   border-radius: 3px;
 }
 .btn i,
-.button i {
+.button i,
+input[type=submit] i,
+.comment-reply-link i {
   font-size: inherit;
 }
 .btn.btn-sm, .btn.sz-small,
 .button.btn-sm,
-.button.sz-small {
+.button.sz-small,
+input[type=submit].btn-sm,
+input[type=submit].sz-small,
+.comment-reply-link.btn-sm,
+.comment-reply-link.sz-small {
   font-size: 0.8em;
 }
 .btn.btn-lg,
-.button.btn-lg {
+.button.btn-lg,
+input[type=submit].btn-lg,
+.comment-reply-link.btn-lg {
   font-size: 1.25em;
 }
 .btn.btn-big,
-.button.btn-big {
+.button.btn-big,
+input[type=submit].btn-big,
+.comment-reply-link.btn-big {
   font-size: 1.5em;
 }
 .btn.btn-outlined, .btn.button-outlined,
 .button.btn-outlined,
-.button.button-outlined {
+.button.button-outlined,
+input[type=submit].btn-outlined,
+input[type=submit].button-outlined,
+.comment-reply-link.btn-outlined,
+.comment-reply-link.button-outlined {
   background-color: transparent;
   border: 1px solid #000000;
   color: inherit;
@@ -128,51 +144,67 @@ ul li, ol li {
 }
 .btn.btn-outlined:hover, .btn.button-outlined:hover,
 .button.btn-outlined:hover,
-.button.button-outlined:hover {
+.button.button-outlined:hover,
+input[type=submit].btn-outlined:hover,
+input[type=submit].button-outlined:hover,
+.comment-reply-link.btn-outlined:hover,
+.comment-reply-link.button-outlined:hover {
   color: #ffffff;
 }
 .btn.btn-rounded,
-.button.btn-rounded {
+.button.btn-rounded,
+input[type=submit].btn-rounded,
+.comment-reply-link.btn-rounded {
   border-radius: 0.4em;
 }
 .btn:hover,
-.button:hover {
+.button:hover,
+input[type=submit]:hover,
+.comment-reply-link:hover {
   background-color: #262626;
   transition-property: background-color;
   transition-duration: 500ms;
 }
 .btn i,
-.button i {
+.button i,
+input[type=submit] i,
+.comment-reply-link i {
   position: relative;
   margin-left: 0.5em;
   top: 0.1em;
 }
 .btn .show-on-hover,
-.button .show-on-hover {
+.button .show-on-hover,
+input[type=submit] .show-on-hover,
+.comment-reply-link .show-on-hover {
   margin-left: -20px;
   opacity: 0;
   transition-property: opacity, margin-left;
   transition-duration: 500ms;
 }
 .btn:hover .show-on-hover,
-.button:hover .show-on-hover {
+.button:hover .show-on-hover,
+input[type=submit]:hover .show-on-hover,
+.comment-reply-link:hover .show-on-hover {
   opacity: 1;
   margin-left: 0.5em;
 }
 
-input {
+input,
+textarea {
   display: block;
   font-size: inherit;
   outline: none;
   padding: 0.5em;
   margin-bottom: 0.5em;
   width: 100%;
+  border: 0.25px solid #CCC;
 }
 
 label {
   font-size: 0.917em;
   font-weight: bold;
-  margin-left: 0.5em;
+  display: block;
 }
 
 header,
@@ -190,6 +222,14 @@ header {
 header.is-fixed, header.is-absolute {
   width: 100%;
   z-index: 100;
+}
+@media (max-width: 500px) {
+  header {
+    background-color: #666666;
+  }
+  header a {
+    color: #fff;
+  }
 }
 
 section,
@@ -627,8 +667,11 @@ hr {
 }
 
 @media (max-width: 500px) {
-  *[class*=has-width-].is-full-on-mobile {
+  *[class*=has-width-].is-full-on-mobile,
+.grid .col.one-half.is-full-on-mobile,
+.grid .col.one-third.is-full-on-mobile {
     width: 100%;
+    flex: 100%;
   }
 }
 
@@ -856,13 +899,50 @@ iframe {
   min-height: 250px;
   margin: 0 auto;
 }
+.content .post {
+  display: block;
+  margin: 1% 1% 4em;
+}
+.content .post .post-content {
+  display: block;
+}
 .content .post-title {
-  font-size: 3em;
+  font-size: 2.5em;
   margin-bottom: 0.25em;
 }
 .content .post-meta {
   padding: 1em 0 2em;
 }
+.content p {
+  margin-bottom: 2em;
+}
+
+#comments .comment-body,
+#comments #respond {
+  border-top: 1px solid #eeeeee;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+}
+#comments .comment-list {
+  list-style: none;
+  padding-left: 0;
+}
+#comments .comment-list .children {
+  list-style: none;
+  padding-left: 3em;
+}
+#comments .comment-reply-link {
+  font-size: 0.8em;
+  padding: 0.75em 2em;
+}
+
+#breadcrumb {
+  background-color: #f4f4f4;
+}
+#breadcrumb .crumbs li:last-child {
+  padding: 0.75em;
+}
+
 .has-parallax {
   background-attachment: fixed;
   background-position: center;
