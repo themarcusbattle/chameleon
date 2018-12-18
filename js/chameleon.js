@@ -25,8 +25,10 @@ document.addEventListener( 'DOMContentLoaded', () => {
     })
 });
 
+
+
 window.onscroll = function() {
-    console.log('scrolling');
+    let parallax  = document.querySelector( '.has-parallax' );
 };
 
 

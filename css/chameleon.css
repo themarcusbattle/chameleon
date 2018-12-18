@@ -11,7 +11,6 @@ html, body {
 body {
   font-size: 1em;
   font-size: 100%;
-  font-family: "Nunito", sans-serif;
   letter-spacing: 0.01em;
 }
 
@@ -49,6 +48,10 @@ a {
   outline: none;
   text-decoration: none;
 }
+a:hover {
+  transition-property: background-color;
+  transition-duration: 500ms;
+}
 
 blockquote {
   margin-bottom: 1em;
@@ -64,6 +67,7 @@ blockquote.huge {
 p {
   line-height: 1.75em;
   margin-bottom: 2em;
+  max-width: 700px;
 }
 
 ul, ol {
@@ -78,13 +82,9 @@ ul li, ol li {
   line-height: 1.75em;
 }
 
-span {
-  display: inline-block;
-}
-
 .button-group {
   display: block;
-  margin: 2em;
+  margin: 2em 0;
 }
 
 .btn,
@@ -95,7 +95,7 @@ span {
   cursor: pointer;
   display: inline-block;
   outline: 0;
-  padding: 0.75em 2em;
+  padding: 0.55em 1.75em;
   margin-right: 0.5em;
   margin-bottom: 1em;
   text-decoration: none;
@@ -109,7 +109,6 @@ span {
 .button.btn-sm,
 .button.sz-small {
   font-size: 0.8em;
-  padding: 0.75em 2em;
 }
 .btn.btn-lg,
 .button.btn-lg {
@@ -204,11 +203,12 @@ nav .menu a {
 nav ul {
   list-style: none;
   padding-left: 0;
+  margin-bottom: 0;
 }
 nav ul li {
   display: inline-block;
 }
-nav ul li a {
+nav ul li a, nav ul li:last-of-type {
   padding: 0.75em;
 }
 
@@ -218,17 +218,15 @@ ul.menu {
 }
 ul.menu a {
   display: inline-block;
-  padding: 0.25em 0;
+  padding: 1em;
 }
 ul.menu.horizontal li {
   display: inline-block;
-  margin: 0 1.5%;
 }
 
 .hero,
 .slider {
   align-items: center;
-  background-color: #f4f4f4;
   background-position: center;
   background-size: cover;
   color: inherit;
@@ -236,7 +234,7 @@ ul.menu.horizontal li {
   justify-content: center;
   min-height: 300px;
   overflow: hidden;
-  padding: 2em 1em;
+  padding: 2em;
   position: relative;
   text-align: center;
 }
@@ -265,7 +263,7 @@ ul.menu.horizontal li {
 }
 .hero .hero-panel,
 .slider .hero-panel {
-  width: 70%;
+  width: 80%;
   z-index: 20;
 }
 @media (max-width: 500px) {
@@ -375,6 +373,14 @@ ul.menu.horizontal li {
   z-index: 10;
 }
 
+.no-overlay .overlay {
+  display: none;
+}
+
+.has-overlay-on-mobile .overlay {
+  display: block;
+}
+
 .has-no-scroll {
   overflow: hidden;
 }
@@ -398,6 +404,7 @@ ul.menu.horizontal li {
   display: flex;
   justify-content: center;
   margin: auto;
+  flex-flow: row wrap;
 }
 .grid .col {
   flex: 1;
@@ -410,12 +417,25 @@ ul.menu.horizontal li {
 .grid .col.one-third {
   flex: 30%;
 }
+.grid .col.two-thirds {
+  flex: 60%;
+}
 .grid .col.has-width-50, .grid .col.one-half {
   flex: 48%;
 }
 .grid .col.has-width-75 {
   width: 75%;
   flex: inherit;
+}
+.grid .col.has-no-side-margin {
+  margin-left: 0;
+  margin-right: 0;
+}
+.grid .col > a {
+  border: none;
+}
+.grid .col > a:hover {
+  background-color: #f4f4f4;
 }
 @media (max-width: 500px) {
   .grid .col.has-margin-bottom-on-mobile {
@@ -507,6 +527,15 @@ hr {
   }
 }
 
+.has-text-align-left .icon,
+.has-text-align-left p.subtitle,
+.has-text-align-left .button-group,
+.has-text-align-right .icon,
+.has-text-align-right p.subtitle,
+.has-text-align-right .button-group {
+  margin-right: 0;
+}
+
 .has-text-align-center,
 .has-text-centered {
   text-align: center;
@@ -515,6 +544,10 @@ hr {
   .has-text-align-center.has-text-align-left-on-mobile,
 .has-text-centered.has-text-align-left-on-mobile {
     text-align: left;
+  }
+  .has-text-align-center-on-mobile,
+.has-text-centered-on-mobile {
+    text-align: center;
   }
 }
 
@@ -561,12 +594,23 @@ hr {
 
 @media (max-width: 500px) {
   .has-no-padding-on-mobile {
-    padding: 0;
+    padding: inherit 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .has-padding-on-mobile {
+    padding: inherit 1em;
   }
 }
 
 .has-no-margin {
   margin: 0;
+}
+
+.has-no-side-margin {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .has-margin {
@@ -614,6 +658,7 @@ hr {
 @media (max-width: 500px) {
   .is-full-on-mobile {
     width: 100%;
+    flex: none !important;
   }
 }
 
@@ -675,6 +720,7 @@ hr {
 
 .fineprint {
   font-size: 0.75em;
+  margin-bottom: 0;
 }
 
 i.is-large {
@@ -696,6 +742,10 @@ i.is-xl {
   .logo img {
     max-height: 50px;
   }
+}
+
+footer .logo img {
+  height: 70px;
 }
 
 .img-wrap {
@@ -736,7 +786,8 @@ iframe {
 }
 
 .icon {
-  margin-bottom: 0.5em;
+  max-width: 150px;
+  margin: 0 auto 0.5em;
   display: block;
 }
 .icon.icon-large {
@@ -770,22 +821,32 @@ iframe {
 
 .media {
   display: block;
+  position: relative;
 }
 .media.thumbnail {
   background-color: #f4f4f4;
   min-height: 250px;
+  overflow: hidden;
+}
+.media.thumbnail img {
+  width: 100%;
 }
 
-.recent-posts h2.headline {
+.recent-posts h2.headline,
+.product-grid h2.headline {
   text-align: center;
 }
-.recent-posts .post-preview .thumbnail {
-  margin-bottom: 1.5em;
-}
-.recent-posts .post-preview-meta {
+.recent-posts .post-preview-meta,
+.product-grid .post-preview-meta {
   padding: 1em 2em;
 }
-.recent-posts .post-date {
+.recent-posts span,
+.product-grid span {
+  display: block;
+  margin-bottom: 0.25em;
+}
+.recent-posts .post-date,
+.product-grid .post-date {
   display: block;
   margin-bottom: 1em;
 }
@@ -801,6 +862,16 @@ iframe {
 }
 .content .post-meta {
   padding: 1em 0 2em;
+}
+.has-parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wp-block-columns {
+  margin-bottom: 2em;
 }
 
 /*# sourceMappingURL=chameleon.css.map */
