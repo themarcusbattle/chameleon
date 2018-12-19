@@ -836,6 +836,9 @@ iframe {
 .icon.icon-large {
   font-size: 3em;
 }
+.icon img {
+  max-width: 150px;
+}
 
 .is-shape-flag:after {
   display: none;

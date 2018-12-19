@@ -730,6 +730,10 @@ iframe {
     &.icon-large {
         font-size: 3em;
     }
+
+    img {
+        max-width: 150px;
+    }
 }
 
 // Shapes
