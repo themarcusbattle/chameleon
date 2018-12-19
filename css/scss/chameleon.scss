@@ -890,3 +890,7 @@ iframe {
 .wp-block-columns {
     margin-bottom: 2em;
 }
+
+.wp-block-image img {
+    height: inherit;
+}
