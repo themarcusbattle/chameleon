@@ -133,6 +133,7 @@ input[type="submit"],
         background-color: darken( $primary, 25% );
         transition-property: background-color;
         transition-duration: 500ms;
+        box-shadow: 0 0 10px #CCC;
     }
 
     i {
@@ -157,6 +158,20 @@ input[type="submit"],
 }
 
 // Forms
+form {
+    max-width: 90%; }
+
+.field {
+    display: block;
+    padding: .25em 0; }
+
+.field-group {
+
+    .field {
+        display: inline-block;
+        margin-right: 2em; }
+}
+
 input,
 textarea {
     display: block;
@@ -166,6 +181,7 @@ textarea {
     margin-bottom: .5em;
     width: 100%;
     border: .25px solid #CCC;
+    border-radius: 3px;
 }
 
 label {
@@ -186,7 +202,7 @@ div {
 }
 
 header {
-    padding: 1em; 
+    padding: 1em 2em; 
 
     &.is-fixed,
     &.is-absolute {
@@ -213,11 +229,22 @@ nav {
         padding-left: 0;
         margin-bottom: 0;
 
+        &.is-vertical {
+            
+            li {
+                display: block;
+            }
+        }
+
         li {
             display: inline-block;
-
-            a,
-            &:last-of-type {
+            
+            i {
+                margin-right: 4px;
+                min-width: 30px;
+                text-align: center;
+            }
+            a {
                 padding: .75em;
             }
         }
@@ -419,7 +446,7 @@ ul.menu {
         flex: 1;
         margin: 1%;
 
-        &.has-width-25 { width: 25%; flex: inherit; }
+        &.has-width-25, &.one-fourth { width: 25%; }
         &.one-third { flex: 30%; }
         &.two-thirds { flex: 60%; }
         &.has-width-50, &.one-half { flex: 48%; }
@@ -893,4 +920,79 @@ iframe {
 
 .wp-block-image img {
     height: inherit;
+}
+
+
+// Temp Styles
+.field input,
+.field textarea,
+.field select {
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 0 10px #ddd;
+    padding: .5em 1em;
+    color: #444444;
+    outline: none;
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    resize: none;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+        background-color: #fff !important;
+    }
+
+    &:focus {
+        box-shadow: 0 0 10px #AAAAAA;
+        transition-property: box-shadow;
+        transition-duration: 300ms;
+    }
+
+    &::placeholder {
+        color: #CCC;
+    }
+}
+
+.field textarea {
+    padding: 1em;
+}
+
+.note {
+    background-color: #fff;
+    padding: 1em;
+    margin-bottom: 1em;
+    box-shadow: 0 0 10px #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #999;
+    display: block;
+
+    &:hover {
+        text-decoration: none;
+        box-shadow: 0 0 10px #AAAAAA;
+    }
+}
+
+table {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ddd;
+    border-radius: 3px;
+
+    thead {
+
+        tr {
+            border-bottom: 1px solid #f4f4f4;
+        }
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    th, td {
+        padding: 1em;
+    }
 }

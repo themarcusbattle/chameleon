@@ -164,6 +164,7 @@ input[type=submit]:hover,
   background-color: #262626;
   transition-property: background-color;
   transition-duration: 500ms;
+  box-shadow: 0 0 10px #CCC;
 }
 .btn i,
 .button i,
@@ -190,6 +191,20 @@ input[type=submit]:hover .show-on-hover,
   margin-left: 0.5em;
 }
 
+form {
+  max-width: 90%;
+}
+
+.field {
+  display: block;
+  padding: 0.25em 0;
+}
+
+.field-group .field {
+  display: inline-block;
+  margin-right: 2em;
+}
+
 input,
 textarea {
   display: block;
@@ -199,6 +214,7 @@ textarea {
   margin-bottom: 0.5em;
   width: 100%;
   border: 0.25px solid #CCC;
+  border-radius: 3px;
 }
 
 label {
@@ -217,7 +233,7 @@ div {
 }
 
 header {
-  padding: 1em;
+  padding: 1em 2em;
 }
 header.is-fixed, header.is-absolute {
   width: 100%;
@@ -245,10 +261,18 @@ nav ul {
   padding-left: 0;
   margin-bottom: 0;
 }
+nav ul.is-vertical li {
+  display: block;
+}
 nav ul li {
   display: inline-block;
 }
-nav ul li a, nav ul li:last-of-type {
+nav ul li i {
+  margin-right: 4px;
+  min-width: 30px;
+  text-align: center;
+}
+nav ul li a {
   padding: 0.75em;
 }
 
@@ -450,9 +474,8 @@ ul.menu.horizontal li {
   flex: 1;
   margin: 1%;
 }
-.grid .col.has-width-25 {
+.grid .col.has-width-25, .grid .col.one-fourth {
   width: 25%;
-  flex: inherit;
 }
 .grid .col.one-third {
   flex: 30%;
@@ -960,6 +983,77 @@ iframe {
 
 .wp-block-image img {
   height: inherit;
+}
+
+.field input,
+.field textarea,
+.field select {
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 0 10px #ddd;
+  padding: 0.5em 1em;
+  color: #444444;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: none;
+}
+.field input:-webkit-autofill, .field input:-webkit-autofill:hover, .field input:-webkit-autofill:focus,
+.field textarea:-webkit-autofill,
+.field textarea:-webkit-autofill:hover,
+.field textarea:-webkit-autofill:focus,
+.field select:-webkit-autofill,
+.field select:-webkit-autofill:hover,
+.field select:-webkit-autofill:focus {
+  background-color: #fff !important;
+}
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  box-shadow: 0 0 10px #AAAAAA;
+  transition-property: box-shadow;
+  transition-duration: 300ms;
+}
+.field input::placeholder,
+.field textarea::placeholder,
+.field select::placeholder {
+  color: #CCC;
+}
+
+.field textarea {
+  padding: 1em;
+}
+
+.note {
+  background-color: #fff;
+  padding: 1em;
+  margin-bottom: 1em;
+  box-shadow: 0 0 10px #ddd;
+  border-radius: 3px;
+  font-size: 14px;
+  color: #999;
+  display: block;
+}
+.note:hover {
+  text-decoration: none;
+  box-shadow: 0 0 10px #AAAAAA;
+}
+
+table {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px #ddd;
+  border-radius: 3px;
+}
+table thead tr {
+  border-bottom: 1px solid #f4f4f4;
+}
+table th {
+  font-weight: bold;
+}
+table th, table td {
+  padding: 1em;
 }
 
 /*# sourceMappingURL=chameleon.css.map */
